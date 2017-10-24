@@ -1,0 +1,25 @@
+﻿<html>
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+  </head>
+  <body>
+
+  <form action="http://picture2.oos-bj2.ctyunapi.cn" method="post" enctype="multipart/form-data">
+    Key to upload: 
+    <input type="input"  name="key" value="user/eric/${filename}" /><br />
+    <input type="hidden" name="acl" value="public-read" />
+    Content-Type: 
+    <input type="input"  name="Content-Type" value="image/jpeg" /><br />
+    Tags for File: 
+    <input type="hidden" name="AWSAccessKeyId" value="58cc1dd2a52d5309a4f4" />
+    <input type="hidden" name="Policy" value="eyJjb25kaXRpb25zIjogW3siYnVja2V0IjogInBpY3R1cmUyIn0sIFsic3RhcnRzLXdpdGgiLCAiJGtleSIsICJ1c2VyL2VyaWMvIl0sIFsic3RhcnRzLXdpdGgiLCAiJENvbnRlbnQtVHlwZSIsICJpbWFnZS8iXSwgeyJhY2wiOiAicHVibGljLXJlYWQifV0sICJleHBpcmF0aW9uIjogIjIwMTctMTAtMjhUMTI6MDA6MDAuMDAwWiJ9" />
+    <input type="hidden" name="Signature" value="u21pTwLsReU8yJA31lTS3edACn8=" />
+    File: 
+    <input type="file"   name="file" /> <br />
+    <!-- The elements after this will be ignored -->
+    <input type="submit" name="submit" value="Upload to OOS" />
+  </form>
+  
+</html>

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><InitiateMultipartUploadResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Bucket>picture2</Bucket><Key>example1.txt</Key><UploadId>1508491208226081142</UploadId></InitiateMultipartUploadResult>

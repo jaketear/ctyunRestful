@@ -1,0 +1,37 @@
+<说明文档>
+    <源码目录source_code使用方法>
+        1.使用python requests库实现http请求
+            python2版本：python2.7.13
+            平台：Windows/Linux
+            python源码文件：source_code/python_code
+        2.源码结构
+            oosfunction.py基于python requests发送 http请求调用oos HTTP REST接口实现oos云存储操作方法，以此为基础可以实现OOS开发者文档中的功能
+            答题源码文件按题目顺序命名，如senior_1.py，表示高级题目1，完成对应题目功能
+            操作应用到的文件存储在source_code目录，文件操作路径设置参考3
+        3.文件路径
+            global_file.py文件定义了全局的global_path方便源码使用文件操作，使用时候按照source_code目录放置的路径修改global_path值，如global_path=u'C:/Users/admin/Desktop/'
+    </源码文件夹source_code使用方法>
+    
+    <功能介绍>
+        1.按照开发者文档，实现用户签名验证方法
+        2.实现通过http请求调用接口功能
+        3.实现service，bucket，object操作方法
+        4.实现AccessKey操作方法
+    </功能介绍>
+    
+    <参赛信息>
+        <个人(负责人)>
+        姓名：严骅
+        参赛身份：开发人才
+        单位名称：中国商飞试飞中心
+        参赛形式：团体
+        身份证号：320581198912121531
+        联系电话：15195843768
+        天翼云帐号（邮箱）：yanhualyn@126.com
+        <参赛成员>
+        姓名：郁美霜
+        身份证号：320581199008163682
+        联系电话：18516111482
+    </参赛信息>
+</说明文档>
+        

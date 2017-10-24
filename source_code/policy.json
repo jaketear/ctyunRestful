@@ -1,0 +1,16 @@
+﻿{
+	"expiration":"2017-10-28T12:00:00.000Z",
+	"conditions":[
+		{
+			"bucket":"picture2"
+		},
+		[
+			"starts-with",
+			"$key",
+			"user/eric/"
+		],
+		{
+			"acl":"public-read"
+		}
+	]
+}
