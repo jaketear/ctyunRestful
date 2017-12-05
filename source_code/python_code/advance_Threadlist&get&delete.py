@@ -3,12 +3,14 @@
 import global_file
 from global_file import global_path
 import oosfunction
-from oosfunction import httpput
-from oosfunction import httpget
-from oosfunction import httpdelete
+from oosfunction import HttpRequest
 from oosfunction import MyThread
 import xml.etree.ElementTree as ET
 
+host="http://oos-bj2.ctyunapi.cn"
+ak="58cc1dd2a52d5309a4f4"
+sk="5ac5b36ef3a394a46a816b8d6e833badd30db7a8"
+Multithread=HttpRequest(host,ak,sk)
 #******list object
 bucketname="picture3"
 files={}
@@ -16,14 +18,14 @@ payload={"prefix":"Feb/"}
 headers={}
 objectname=""
 subResource=""
-r=httpget(files,headers,payload,bucketname=bucketname,objectname=objectname,subResource=subResource)
+r=Multithread.httpget(files,headers,payload,bucketname=bucketname,objectname=objectname,subResource=subResource)
 with open(global_path+u'source_code/listobject.xml','wb') as f:
     f.write(r.content)
 print r,r.headers,r.text,r.url
 
 
 #******multithreading get object
-host="http://oos-bj2.ctyunapi.cn"
+#host="http://oos-bj2.ctyunapi.cn"
 bucketname="picture3"
 subResource=""
 objectnamelist=[] #list存储需要get的object
@@ -40,7 +42,7 @@ print Threadnum
 #multhreading get
 threadsget=[]#Thread list
 for ig in range(Threadnum):
-    tg=MyThread(httpget,args=({},{},payload,host,bucketname,objectnamelist[ig],subResource))
+    tg=MyThread(Multithread.httpget,args=({},{},payload,host,bucketname,objectnamelist[ig],subResource))
     threadsget.append(tg)
 for tg in threadsget:
     tg.setDaemon(True)
@@ -56,7 +58,7 @@ headers={}
 objectname=""
 subResource=""
 #get all object in bucket to varify delete object
-r=httpget(files,headers,payload,bucketname=bucketname,objectname=objectname,subResource=subResource)
+r=Multithread.httpget(files,headers,payload,bucketname=bucketname,objectname=objectname,subResource=subResource)
 with open(global_path+u'source_code/listallobject.xml','wb') as f:
     f.write(r.content)
 print r,r.headers,r.text,r.url
@@ -75,7 +77,7 @@ Threadnumdel=len(objectdellist)
 print objectdellist
 threadsdelete=[]
 for idt in range(Threadnumdel):
-    td=MyThread(httpdelete,args=({},{},payload,host,bucketname,objectdellist[idt],subResource))
+    td=MyThread(Multithread.httpdelete,args=({},{},payload,host,bucketname,objectdellist[idt],subResource))
     threadsdelete.append(td)
 for td in threadsdelete:
     td.setDaemon(True)

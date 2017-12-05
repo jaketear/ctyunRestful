@@ -18,7 +18,7 @@ class MyThread(threading.Thread):
         self.func=func
         self.args=args
     def run(self):
-        self.result=self.func(*self.args)
+        self.result=self.func(*self.args)  #tuple
     def get_result(self):
         try:
             return self.result

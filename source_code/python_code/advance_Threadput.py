@@ -3,12 +3,14 @@
 import global_file
 from global_file import global_path
 import oosfunction
-from oosfunction import httpput
-from oosfunction import httpget
+from oosfunction import HttpRequest
 from oosfunction import MyThread
 #multi-threading put
 
 host="http://oos-bj2.ctyunapi.cn"
+ak="58cc1dd2a52d5309a4f4"
+sk="5ac5b36ef3a394a46a816b8d6e833badd30db7a8"
+Multithread=HttpRequest(host,ak,sk)
 data=""
 bucketname="picture3"
 payload={}
@@ -27,7 +29,7 @@ with open(pathlist[2],'rb') as f3:
 headerslist=[{"Content-Type":"text/txt"},{"Content-Type":"text/txt"},{"Content-Type":"text/txt"}]
 filenamelist=["Feb/a1.txt","Feb/a2.txt","Aug/a3.txt"]
 for i in range(3):
-    t=MyThread(httpput,args=({},headerslist[i],payload,data[i],host,bucketname,filenamelist[i],subResource))
+    t=MyThread(Multithread.httpput,args=({},headerslist[i],payload,data[i],host,bucketname,filenamelist[i],subResource))
     threads.append(t)
 for t in threads:
     t.setDaemon(True)
