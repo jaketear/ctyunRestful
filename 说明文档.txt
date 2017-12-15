@@ -1,22 +1,29 @@
-<说明文档>
+﻿<说明文档>
     <源码目录source_code使用方法>
         1.使用python requests库实现http请求
-            python2版本：python2.7.13
-            平台：Windows/Linux
-            python源码文件：source_code/python_code
+        --：python2版本：python2.7.13
+	    --：requests版本：2.18.4		
+        --：平台：Windows/Linux
+        --：python源码文件：source_code/python_code/
         2.源码结构
-            oosfunction.py基于python requests发送 http请求调用oos HTTP REST接口实现oos云存储操作方法，以此为基础可以实现OOS开发者文档中的功能
-            答题源码文件按题目顺序命名，如senior_1.py，表示高级题目1，完成对应题目功能
-            操作应用到的文件存储在source_code目录，文件操作路径设置参考3
+        --：oosfunction.py文件封装了HttpRequest类提供oos的云存储相关操作的方法，以及oos安全策略规定和用户自定义的签名验证方法；重写了Python Thread类提供多线程控制和处理功能
+        --：通过调用oosfunction.py可以实现oos bucket、object、aksk、url等的相关操作功能，junior_X这些文件为实现各项基本功能的用例
+        --：针对API提供的分段上传，object上传的冗余模式，用户自定义签名，表单上传方式等功能，intermediate_X，senior_X这些文件为实现这些功能的用例
+        --：多线程的object上传，下载和删除操作功能，advance_X这些文件为实现功能的用例
+        --：功能实现应用到的文件存储在source_code目录，文件操作的路径设置参考3.文件路径
         3.文件路径
-            global_file.py文件定义了全局的global_path方便源码使用文件操作，使用时候按照source_code目录放置的路径修改global_path值，如global_path=u'C:/Users/admin/Desktop/'
+            global_file.py文件定义了全局的global_path方便源码使用文件操作，使用时候按照source_code目录放置的路径修改		global_path值，如global_path=u'C:/Users/admin/Desktop/'
     </源码文件夹source_code使用方法>
     
     <功能介绍>
         1.按照开发者文档，实现用户签名验证方法
         2.实现通过http请求调用接口功能
-        3.实现service，bucket，object操作方法
+        3.实现service，bucket，object基本操作方法
         4.实现AccessKey操作方法
+        5.实现用户自定义签名验证，及表单方式上传对象
+        6.实现文件的分段上传
+        7.实现多线程操作功能
+        8.实现url分享功能
     </功能介绍>
     
     <参赛信息>
